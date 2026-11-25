@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "GE Smart Timer & Error Control",
+  "version": "1.2",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://*.global-exam.com/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.global-exam.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    body { font-family: -apple-system, sans-serif; width: 280px; padding: 14px; margin: 0; background: #12151c; color: #f3f4f6; }
+    h1 { font-size: 15px; margin: 0 0 12px 0; }
+    .row { margin-bottom: 12px; }
+    label { display: block; font-size: 12px; color: #cbd5e1; margin-bottom: 5px; }
+    .range { display: flex; align-items: center; gap: 8px; }
+    input[type="number"] { width: 100%; padding: 7px 8px; border-radius: 6px; border: 1px solid #334155; background: #1e293b; color: #fff; box-sizing: border-box; }
+    .toggle { display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; border-radius: 8px; background: #1e293b; margin-bottom: 12px; font-size: 13px; }
+    button { width: 100%; padding: 9px; border: none; border-radius: 6px; background: #2563eb; color: #fff; font-weight: 600; cursor: pointer; }
+    .status { margin-top: 8px; font-size: 12px; color: #4ade80; min-height: 16px; }
+  </style>
+</head>
+<body>
+  <h1>GE Smart Controls</h1>
+  <div class="toggle">
+    <span>Activer l'automatisation</span>
+    <input type="checkbox" id="enabled" />
+  </div>
+  <div class="row">
+    <label>Temps de réponse aléatoire (secondes : min / max)</label>
+    <div class="range">
+      <input type="number" id="minDelay" min="1" max="600" value="20" />
+      <span>à</span>
+      <input type="number" id="maxDelay" min="1" max="600" value="30" />
+    </div>
+  </div>
+  <div class="row">
+    <label for="errorRate">Taux d'erreurs volontaire (%)</label>
+    <input type="number" id="errorRate" min="0" max="100" value="15" />
+  </div>
+  <button id="saveBtn">Enregistrer</button>
+  <div class="status" id="status"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
